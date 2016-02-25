@@ -1,10 +1,14 @@
-//
-//  EaseSDKHelper.h
-//  ChatDemo-UI3.0
-//
-//  Created by dhc on 15/6/24.
-//  Copyright (c) 2015年 easemob.com. All rights reserved.
-//
+/************************************************************
+ *  * Hyphenate CONFIDENTIAL
+ * __________________
+ * Copyright (C) 2015-2016 Hyphenate Technologies. All rights reserved.
+ *
+ * NOTICE: All information contained herein is, and remains
+ * the property of Hyphenate Technologies.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Hyphenate Technologies.
+ */
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
@@ -14,7 +18,6 @@
 #define KNOTIFICATION_CALL_CLOSE @"callControllerClose"
 
 #define kSDKConfigEnableConsoleLogger @"SDKConfigEnableConsoleLogger"
-#define kEaseUISDKConfigIsUseLite @"isUselibEaseMobClientSDKLite"
 
 @interface EaseSDKHelper : NSObject<EMClientDelegate>
 
@@ -24,13 +27,13 @@
 
 + (instancetype)shareHelper;
 
-#pragma mark - init easemob
+#pragma mark - init hyphenate
 
-- (void)easemobApplication:(UIApplication *)application
+- (void)hyphenateApplication:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-                    appkey:(NSString *)appkey
-              apnsCertName:(NSString *)apnsCertName
-               otherConfig:(NSDictionary *)otherConfig;
+                      appkey:(NSString *)appkey
+                apnsCertName:(NSString *)apnsCertName
+                 otherConfig:(NSDictionary *)otherConfig;
 
 #pragma mark - send message
 

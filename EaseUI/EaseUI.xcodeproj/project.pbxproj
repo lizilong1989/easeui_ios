@@ -2178,7 +2178,6 @@
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/EaseUI/EaseUI-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../EaseMobSDK/include/**",
 					"$(PROJECT_DIR)/../../emclient-ios/newSDK/export/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -2186,7 +2185,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
-					"$(PROJECT_DIR)/../EaseMobSDK/lib",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2208,7 +2206,6 @@
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/EaseUI/EaseUI-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../EaseMobSDK/include/**",
 					"$(PROJECT_DIR)/../../emclient-ios/newSDK/export/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -2216,7 +2213,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
-					"$(PROJECT_DIR)/../EaseMobSDK/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";

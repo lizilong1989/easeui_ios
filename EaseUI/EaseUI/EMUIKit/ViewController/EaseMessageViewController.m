@@ -1,10 +1,14 @@
-//
-//  EaseMessageViewController.m
-//  ChatDemo-UI3.0
-//
-//  Created by dhc on 15/6/26.
-//  Copyright (c) 2015年 easemob.com. All rights reserved.
-//
+/************************************************************
+ *  * Hyphenate CONFIDENTIAL
+ * __________________
+ * Copyright (C) 2015-2016 Hyphenate Technologies. All rights reserved.
+ *
+ * NOTICE: All information contained herein is, and remains
+ * the property of Hyphenate Technologies.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Hyphenate Technologies.
+ */
 
 #import "EaseMessageViewController.h"
 
@@ -91,7 +95,7 @@
     _lpgr.minimumPressDuration = 0.5;
     [self.tableView addGestureRecognizer:_lpgr];
     
-    _messageQueue = dispatch_queue_create("easemob.com", NULL);
+    _messageQueue = dispatch_queue_create("hyphenate.com", NULL);
     
     //注册代理
     [EMCDDeviceManager sharedInstance].delegate = self;
@@ -1317,7 +1321,12 @@
     // 隐藏键盘
     [self.chatToolbar endEditing:YES];
     
-//    [[NSNotificationCenter defaultCenter] postNotificationName:KNOTIFICATION_CALL object:@{@"chatter":self.conversation.conversationId, @"type":[NSNumber numberWithInt:eCallSessionTypeAudio]}];
+    if (![self _canRecord]) {
+        UIAlertView * alt = [[UIAlertView alloc] initWithTitle:NSEaseLocalizedString(@"setting.microphoneNoAuthority", @"No microphone permissions") message:NSEaseLocalizedString(@"setting.microphoneAuthority", @"Please open in \"Setting\"-\"Privacy\"-\"Microphone\".") delegate:self cancelButtonTitle:nil otherButtonTitles:NSEaseLocalizedString(@"ok", @"OK"), nil];
+        [alt show];
+        return;
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:KNOTIFICATION_CALL object:@{@"chatter":self.conversation.conversationId, @"type":[NSNumber numberWithInt:0]}];
 }
 
 - (void)moreViewVideoCallAction:(EaseChatBarMoreView *)moreView
@@ -1325,7 +1334,11 @@
     // 隐藏键盘
     [self.chatToolbar endEditing:YES];
     
-//    [[NSNotificationCenter defaultCenter] postNotificationName:KNOTIFICATION_CALL object:@{@"chatter":self.conversation.conversationId, @"type":[NSNumber numberWithInt:eCallSessionTypeVideo]}];
+    
+    if (![self _canRecord]) {
+        return;
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:KNOTIFICATION_CALL object:@{@"chatter":self.conversation.conversationId, @"type":[NSNumber numberWithInt:1]}];
 }
 
 #pragma mark - EMLocationViewDelegate
@@ -1336,8 +1349,6 @@
 {
     [self sendLocationMessageLatitude:latitude longitude:longitude andAddress:address];
 }
-
-#pragma mark - EaseMob
 
 #pragma mark - EMChatManagerDelegate
 

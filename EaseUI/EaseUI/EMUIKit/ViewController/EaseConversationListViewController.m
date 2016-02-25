@@ -1,10 +1,14 @@
-//
-//  EaseConversationListViewController.m
-//  ChatDemo-UI3.0
-//
-//  Created by dhc on 15/6/25.
-//  Copyright (c) 2015年 easemob.com. All rights reserved.
-//
+/************************************************************
+ *  * Hyphenate CONFIDENTIAL
+ * __________________
+ * Copyright (C) 2015-2016 Hyphenate Technologies. All rights reserved.
+ *
+ * NOTICE: All information contained herein is, and remains
+ * the property of Hyphenate Technologies.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Hyphenate Technologies.
+ */
 
 #import "EaseConversationListViewController.h"
 
@@ -129,7 +133,7 @@
 {
     __weak typeof(self) weakself = self;
     if (!refreshQueue) {
-        refreshQueue = dispatch_queue_create("com.easemob.conversation.refresh", DISPATCH_QUEUE_SERIAL);
+        refreshQueue = dispatch_queue_create("com.hyphenate.conversation.refresh", DISPATCH_QUEUE_SERIAL);
     }
     dispatch_async(refreshQueue, ^{
         if ([weakself.dataArray count] > 1) {
@@ -158,7 +162,7 @@
 {
     __weak typeof(self) weakself = self;
     if (!refreshQueue) {
-        refreshQueue = dispatch_queue_create("com.easemob.conversation.refresh", DISPATCH_QUEUE_SERIAL);
+        refreshQueue = dispatch_queue_create("com.hyphenate.conversation.refresh", DISPATCH_QUEUE_SERIAL);
     }
     dispatch_async(refreshQueue, ^{
         NSArray *conversations = [[EMClient sharedClient].chatManager getAllConversations];
