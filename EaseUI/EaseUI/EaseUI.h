@@ -32,13 +32,15 @@
 #import "NSDate+Category.h"
 #import "NSObject+EaseMob.h"
 #import "NSString+Valid.h"
-#import "UIImageView+EMWebCache.h"
+#import "UIImageView+WebCache.h"
 #import "UIViewController+HUD.h"
 #import "UIViewController+DismissKeyboard.h"
 
 #import "EaseMessageHelper.h"
 #import "EaseMessageHelper+Revoke.h"
 #import "EaseMessageHelper+RemoveAfterRead.h"
+
+#define ENABLE_CALL 0
 
 @interface EaseUI : NSObject
 
